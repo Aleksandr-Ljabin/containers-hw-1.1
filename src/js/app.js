@@ -1,4 +1,4 @@
-class Team {
+export default class Team {
   constructor() {
     this.members = new Set();
   }
@@ -11,10 +11,8 @@ class Team {
     }
   };
 
-  addAll() {
-    if (this.members.has(character) === false) {
-      this.members.add(...character);
-    };
+  addAll(...characterInput) {
+    characterInput.forEach((character) => this.members.add(character));
   };
 
   toArray() {
@@ -22,9 +20,6 @@ class Team {
   }
 
 }
-
-
-
 
 class Character {
   constructor(name, type, attack, defence) {
@@ -94,4 +89,5 @@ class Zombie extends Character {
 
 
 let bowerman = new Bowerman("Иван");
-console.log(bowerman);
+let zombie = new Zombie("qwerty");
+
